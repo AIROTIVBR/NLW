@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ffdb8f;
+}
+
+footer{
+    size: 30%;
+}
+
+main{
+    max-width: 580px;
+    width: 90%;
+    margin: 32px auto;
+    /* when you put 2 values in margin the first one is for the top of the page and the second is for the bottom  */
+    display: grid;
+    gap: 24px;
+}
+
+header{
+    /* all content classified as text can be change with text editors(img is a text element) */
+    padding-top: 32px;
+    /* so the image dont get close to the very begging of the page */
+    height: calc(120px + 32px);
+}
+
+header a{
+    width: 120px;
+    margin: auto; 
+    background-image: linear-gradient(90deg, #ccaf72 0%, #998355 50.52%, #907b50 100%);
+
+    border-radius: 50%;
+
+    display: flex;
+    padding: 4px;
+    transition: transform 0.3s;
+}
+
+header a:hover{
+    transform: scale(1.1);
+}
+
+header div img{
+    width: 100%;
+    border-radius: 50%; 
+    /* the border radius at 50% makes the element into a circle form */
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    gap: 16px;
+}
+
+section{
+    color: #ffffff;
+}
+
+section {
+    color: white;
+    background-image: linear-gradient(90deg, #ccaf72 0%, #998355 50.52%, #907b50 100%);
+    /* we dont use as a border editor because it wont work to more than 1 color */
+    padding-top: 4px;
+    /* add the padding top so this section goes a little bit above the "box" in front of it */
+    border-radius: 10px;
+}
+
+section div{
+    background-color: #dec171;
+    padding: 32px;
+    border-radius: 8px;
+}
+
+section ul {
+    display: flex;
+    flex-wrap: wrap;
+    /* when adding more elements (images) it will put the just to fit the box, it will not go beyond making the page larger */
+    gap: 16px;
+    margin-top: 24px;
+    transition:transform 0.3s
+}
+
+section li:hover{
+    transform: scale(1.1);
+}
+
+h2{
+    color: #372c10;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+p{
+    color: #372c10;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.gameslist img{
+    border-radius: 8px;
+    width: 90px;
+    gap: 24px;
+}
+
+.channelslist img{
+    border-radius: 50%;
+    width: 70px;
+    gap: 24px;
+}
+
+/* animation */
+
+header div{
+    animation: fromTop .7s backwards ;
+    /* animation-delay: 1s, I can put it in the same lane of animation, so I can put and comand to change the order */
+}
+
+main section{
+    animation: fromBottom .7s backwards;
+    /*  the backwards command is for making the animation start as soon as the page load */
+}
+
+main section:nth-child(1){
+    animation-delay:0;
+    /* the nth child commando is used to choose a "son" of certain part of the html so you can apply a different action for each one of them */
+}
+
+main section:nth-child(2){
+    animation-delay:.4s;
+}
+
+main section:nth-child(3){
+    animation-delay:.8s;
+}
+
+@keyframes fromTop{
+    from{
+        opacity: 0;
+        /* the opacity command is used for changing the element visibility */
+        transform: translateY(-30px);
+        /* the traslate Y we used for moving elements on the Y axis */
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    /* the sintaxes to create an animation is made by keyframes and a identificator for the animation */
+    /* we use from command to tells where the animations beggins and to for where it finishes */
+}
+
+@keyframes fromBottom{
+    from{
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
